@@ -24,21 +24,28 @@
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="hero" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 5vw 80px;position:relative;background:radial-gradient(ellipse 900px 500px at 82% 20%, rgba(201,162,39,0.10), transparent 60%), radial-gradient(ellipse 700px 500px at 10% 90%, rgba(0,224,168,0.06), transparent 60%);">
+<section class="hero" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 5vw 80px;position:relative;background:radial-gradient(ellipse 900px 500px at 82% 20%, rgba(201,162,39,0.10), transparent 60%), radial-gradient(ellipse 700px 500px at 10% 90%, rgba(0,224,168,0.06), transparent 60%);overflow:hidden;">
+  <div class="particle-field"></div>
+  <div class="spotlight"></div>
   <svg style="position:absolute;right:2vw;top:50%;transform:translateY(-50%);width:min(48vw,620px);opacity:0.9;pointer-events:none;" viewBox="0 0 400 400" fill="none">
     <circle cx="200" cy="200" r="170" stroke="rgba(201,162,39,0.14)" stroke-width="1"/>
     <circle cx="200" cy="200" r="140" stroke="rgba(201,162,39,0.10)" stroke-width="1"/>
     <path d="M 80 260 A 150 150 0 1 1 320 260" stroke="rgba(201,162,39,0.35)" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <path d="M 80 260 A 150 150 0 0 1 250 90" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <circle cx="200" cy="200" r="6" fill="#00E0A8"/>
-    <line x1="200" y1="200" x2="255" y2="105" stroke="#00E0A8" stroke-width="2"/>
+    <path class="gauge-arc-fg" d="M 80 260 A 150 150 0 0 1 250 90" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g class="gauge-needle">
+      <circle cx="200" cy="200" r="6" fill="#00E0A8"/>
+      <line x1="200" y1="200" x2="255" y2="105" stroke="#00E0A8" stroke-width="2"/>
+    </g>
     <text x="200" y="215" text-anchor="middle" fill="#5C6472" font-family="JetBrains Mono" font-size="12">KM RANGE</text>
   </svg>
 
   <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:end;position:relative;z-index:2;" class="hero-grid">
     <div>
       <div class="eyebrow">Gorakhpur's Electric Scooty House</div>
-      <h1 style="font-size:clamp(2.8rem,6.4vw,5.6rem);color:var(--text);">Power that<br>doesn't <span style="color:var(--gold-bright);">burn a hole.</span></h1>
+      <h1 style="font-size:clamp(2.8rem,6.4vw,5.6rem);color:var(--text);">
+        <span class="word-reveal"><span style="animation-delay:.05s">Power</span></span> <span class="word-reveal"><span style="animation-delay:.13s">that</span></span><br>
+        <span class="word-reveal"><span style="animation-delay:.21s">doesn't</span></span> <span class="word-reveal"><span style="animation-delay:.29s;color:var(--gold-bright)">burn</span></span> <span class="word-reveal"><span style="animation-delay:.37s;color:var(--gold-bright)">a</span></span> <span class="word-reveal"><span style="animation-delay:.45s;color:var(--gold-bright)">hole.</span></span>
+      </h1>
       <p style="max-width:460px;color:var(--muted);font-size:1.02rem;line-height:1.65;margin-top:22px;">Shiv Showroom brings you a curated line-up of electric scooties built for real Indian roads — long range, low running cost, and a ride quality that feels premium from the first throttle.</p>
       <div style="display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;">
         <a href="models.html" class="btn btn-primary">Explore Models →</a>
