@@ -33,6 +33,63 @@ if(header){
   });
 })();
 
+// ===== Scroll-reveal for sections =====
+document.querySelectorAll(
+  '.section-head, .model-card, .feature-cell, .faq-item, .contact-info, form, .page-hero, .compare-wrap'
+).forEach(el => el.classList.add('reveal'));
+
+document.querySelectorAll('.features-grid, .model-grid').forEach(el => el.classList.add('reveal-stagger'));
+
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealIO.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+// ===== Animated stat counters (hero) =====
+function animateCount(el, target, suffix, prefix, decimals) {
+  const duration = 1400;
+  const start = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = target * eased;
+    el.textContent = (prefix || '') + value.toFixed(decimals || 0) + (suffix || '');
+    if (progress < 1) requestAnimationFrame(tick);
+    else el.textContent = (prefix || '') + target.toFixed(decimals || 0) + (suffix || '');
+  }
+  requestAnimationFrame(tick);
+}
+
+const heroStats = document.querySelectorAll('.hero-stats > div');
+if (heroStats.length) {
+  const statConfig = [
+    { target: 151, suffix: ' km', decimals: 0 },
+    { target: 0.18, prefix: '₹', decimals: 2 },
+    { target: 3, decimals: 0 }
+  ];
+  const statIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        heroStats.forEach((stat, i) => {
+          const numEl = stat.querySelector('div');
+          if (numEl && statConfig[i]) {
+            const cfg = statConfig[i];
+            animateCount(numEl, cfg.target, cfg.suffix, cfg.prefix, cfg.decimals);
+          }
+        });
+        statIO.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  statIO.observe(heroStats[0].closest('.hero-stats'));
+}
+
 // ===== Range ring animation on scroll into view =====
 document.querySelectorAll('.model-card').forEach(card=>{
   const circle = card.querySelector('.range-ring .fg');
