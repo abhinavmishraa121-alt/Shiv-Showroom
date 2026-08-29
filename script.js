@@ -33,6 +33,84 @@ if(header){
   });
 })();
 
+// ===== Scroll progress bar =====
+const progressBar = document.createElement('div');
+progressBar.className = 'scroll-progress';
+document.body.prepend(progressBar);
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progressBar.style.width = scrolled + '%';
+}, { passive: true });
+
+// ===== Hero ambient particles =====
+const heroEl = document.querySelector('.hero .particle-field');
+if (heroEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const count = 22;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle' + (i % 3 === 0 ? ' teal' : '');
+    const size = 2 + Math.random() * 3;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.setProperty('--drift-x', (Math.random() * 60 - 30) + 'px');
+    p.style.animationDuration = (7 + Math.random() * 8) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    heroEl.appendChild(p);
+  }
+}
+
+// ===== Cursor spotlight (hero) =====
+const heroSection = document.querySelector('.hero');
+const spotlight = document.querySelector('.hero .spotlight');
+if (heroSection && spotlight) {
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const mx = ((e.clientX - rect.left) / rect.width) * 100;
+    const my = ((e.clientY - rect.top) / rect.height) * 100;
+    spotlight.style.setProperty('--mx', mx + '%');
+    spotlight.style.setProperty('--my', my + '%');
+  });
+}
+
+// ===== Gauge arc draw-in (measured, not guessed) =====
+const gaugeArc = document.querySelector('.gauge-arc-fg');
+if (gaugeArc) {
+  const len = gaugeArc.getTotalLength();
+  gaugeArc.style.strokeDasharray = len;
+  gaugeArc.style.strokeDashoffset = len;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    gaugeArc.style.strokeDashoffset = 0;
+  }));
+}
+
+// ===== 3D tilt on model cards =====
+if (window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.model-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `translateY(-6px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  // ===== Magnetic buttons =====
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      btn.style.transform = `translate(${(x * 10).toFixed(1)}px, ${(y * 8).toFixed(1)}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+}
+
 // ===== Scroll-reveal for sections =====
 document.querySelectorAll(
   '.section-head, .model-card, .feature-cell, .faq-item, .contact-info, form, .page-hero, .compare-wrap'
