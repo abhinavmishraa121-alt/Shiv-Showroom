@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shiv Showroom — Electric Scooty Showroom, Gorakhpur</title>
+<meta name="description" content="Shiv Showroom, Gorakhpur — premium electric scooties with long range, 3-year battery warranty, and same-day service. Book your test ride today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="logo-mark"></span> Shiv Showroom</a>
+  <nav><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="models.html">Models</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="contact.html" class="nav-cta">Book Test Ride</a></li>
+  </ul></nav>
+  <button class="burger" aria-label="Menu">☰</button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 5vw 80px;position:relative;background:radial-gradient(ellipse 900px 500px at 82% 20%, rgba(201,162,39,0.10), transparent 60%), radial-gradient(ellipse 700px 500px at 10% 90%, rgba(0,224,168,0.06), transparent 60%);">
+  <svg style="position:absolute;right:2vw;top:50%;transform:translateY(-50%);width:min(48vw,620px);opacity:0.9;pointer-events:none;" viewBox="0 0 400 400" fill="none">
+    <circle cx="200" cy="200" r="170" stroke="rgba(201,162,39,0.14)" stroke-width="1"/>
+    <circle cx="200" cy="200" r="140" stroke="rgba(201,162,39,0.10)" stroke-width="1"/>
+    <path d="M 80 260 A 150 150 0 1 1 320 260" stroke="rgba(201,162,39,0.35)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 80 260 A 150 150 0 0 1 250 90" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="200" cy="200" r="6" fill="#00E0A8"/>
+    <line x1="200" y1="200" x2="255" y2="105" stroke="#00E0A8" stroke-width="2"/>
+    <text x="200" y="215" text-anchor="middle" fill="#5C6472" font-family="JetBrains Mono" font-size="12">KM RANGE</text>
+  </svg>
+
+  <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:end;position:relative;z-index:2;" class="hero-grid">
+    <div>
+      <div class="eyebrow">Gorakhpur's Electric Scooty House</div>
+      <h1 style="font-size:clamp(2.8rem,6.4vw,5.6rem);color:var(--text);">Power that<br>doesn't <span style="color:var(--gold-bright);">burn a hole.</span></h1>
+      <p style="max-width:460px;color:var(--muted);font-size:1.02rem;line-height:1.65;margin-top:22px;">Shiv Showroom brings you a curated line-up of electric scooties built for real Indian roads — long range, low running cost, and a ride quality that feels premium from the first throttle.</p>
+      <div style="display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;">
+        <a href="models.html" class="btn btn-primary">Explore Models →</a>
+        <a href="contact.html" class="btn btn-ghost">Book a Test Ride</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px;border-left:1px solid var(--line);padding-left:32px;" class="hero-stats">
+      <div>
+        <div style="font-family:'Oswald',sans-serif;font-size:2.2rem;color:var(--gold-bright);line-height:1;">151 km</div>
+        <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px;">Longest range in line-up</div>
+      </div>
+      <div>
+        <div style="font-family:'Oswald',sans-serif;font-size:2.2rem;color:var(--gold-bright);line-height:1;">₹0.18</div>
+        <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px;">Running cost per km</div>
+      </div>
+      <div>
+        <div style="font-family:'Oswald',sans-serif;font-size:2.2rem;color:var(--gold-bright);line-height:1;">3</div>
+        <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px;">Models in showroom, ready to ride</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:34px;left:5vw;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted-2);letter-spacing:0.1em;text-transform:uppercase;">
+    <div style="width:34px;height:1px;background:var(--muted-2);"></div> Scroll to explore
+  </div>
+</section>
+
+<!-- ================= FEATURED MODELS ================= -->
+<section class="models" id="models">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">The Line-Up</div>
+      <h2>Three builds.<br>One promise: range you can trust.</h2>
+    </div>
+    <p>Every scooty at Shiv Showroom is inspected, charged, and test-ridden by us before it reaches the floor — so what you ride is what you get.</p>
+  </div>
+
+  <div class="model-grid">
+    <div class="model-card">
+      <span class="model-tag">Daily Commute</span>
+      <h3>Shiv Spark S1</h3>
+      <div class="price">₹84,900 <span style="color:var(--muted);font-size:0.9rem;">on-road</span></div>
+      <div class="range-ring">
+        <svg viewBox="0 0 80 80">
+          <circle class="bg" cx="40" cy="40" r="34"></circle>
+          <circle class="fg" cx="40" cy="40" r="34" stroke-dasharray="214" stroke-dashoffset="64"></circle>
+        </svg>
+        <div class="val"><b>90</b><small>KM RANGE</small></div>
+      </div>
+      <div class="model-specs">
+        <div class="spec-row"><span>Top Speed</span><span>65 km/h</span></div>
+        <div class="spec-row"><span>Charge Time</span><span>4h 30m</span></div>
+      </div>
+      <a href="models.html" class="btn btn-ghost">View Details</a>
+    </div>
+
+    <div class="model-card">
+      <span class="model-tag">Best Seller</span>
+      <h3>Shiv Volt X1</h3>
+      <div class="price">₹1,09,500 <span style="color:var(--muted);font-size:0.9rem;">on-road</span></div>
+      <div class="range-ring">
+        <svg viewBox="0 0 80 80">
+          <circle class="bg" cx="40" cy="40" r="34"></circle>
+          <circle class="fg" cx="40" cy="40" r="34" stroke-dasharray="214" stroke-dashoffset="34"></circle>
+        </svg>
+        <div class="val"><b>120</b><small>KM RANGE</small></div>
+      </div>
+      <div class="model-specs">
+        <div class="spec-row"><span>Top Speed</span><span>78 km/h</span></div>
+        <div class="spec-row"><span>Charge Time</span><span>3h 50m</span></div>
+      </div>
+      <a href="models.html" class="btn btn-primary">View Details</a>
+    </div>
+
+    <div class="model-card">
+      <span class="model-tag">Flagship</span>
+      <h3>Shiv Volt Max</h3>
+      <div class="price">₹1,38,000 <span style="color:var(--muted);font-size:0.9rem;">on-road</span></div>
+      <div class="range-ring">
+        <svg viewBox="0 0 80 80">
+          <circle class="bg" cx="40" cy="40" r="34"></circle>
+          <circle class="fg" cx="40" cy="40" r="34" stroke-dasharray="214" stroke-dashoffset="6"></circle>
+        </svg>
+        <div class="val"><b>151</b><small>KM RANGE</small></div>
+      </div>
+      <div class="model-specs">
+        <div class="spec-row"><span>Top Speed</span><span>92 km/h</span></div>
+        <div class="spec-row"><span>Charge Time</span><span>4h 10m</span></div>
+      </div>
+      <a href="models.html" class="btn btn-ghost">View Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Why Shiv Showroom</div>
+      <h2>Not just a sale.<br>A relationship that runs for years.</h2>
+    </div>
+    <p>We're a local showroom, not a faceless app — every scooty we sell, we service ourselves.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-cell">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      <div class="fnum">01 / Charging</div>
+      <h3>Home charging, sorted</h3>
+      <p>Free wall-charger fitting assistance at your home or shop within Gorakhpur, no separate wiring vendor needed.</p>
+    </div>
+    <div class="feature-cell">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
+      <div class="fnum">02 / Warranty</div>
+      <h3>3-year battery cover</h3>
+      <p>Every model in our line-up carries a 3-year or 30,000 km battery warranty, whichever comes first.</p>
+    </div>
+    <div class="feature-cell">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <div class="fnum">03 / Service</div>
+      <h3>Same-day service slots</h3>
+      <p>In-house service bay right at the showroom — most check-ups and repairs are done within the same visit.</p>
+    </div>
+    <div class="feature-cell">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+      <div class="fnum">04 / Finance</div>
+      <h3>EMI from ₹2,499/mo</h3>
+      <p>Easy financing tie-ups with local banks and NBFCs — most riders walk out with approval the same day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="cta-band">
+  <h2>Ready to hear it in person? A test ride tells you more than any spec sheet.</h2>
+  <a href="contact.html" class="btn btn-primary">Book Your Test Ride</a>
+</section>
+
+<footer>
+  <div class="fnote">© 2026 Shiv Showroom. All rights reserved.</div>
+  <div class="flinks">
+    <a href="models.html">Models</a>
+    <a href="compare.html">Compare</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
